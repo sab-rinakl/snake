@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Fruit
+comment1.params=
+comment1.target=Fruit()
+comment2.params=g
+comment2.target=void\ draw(java.awt.Graphics2D)
+comment3.params=
+comment3.target=java.awt.Rectangle\ getRect()
+comment4.params=
+comment4.target=void\ spawn()
+numComments=5
