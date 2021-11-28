@@ -18,7 +18,7 @@ public class Segment
 
     public void offscreen()
     {
-        if (x<0 || x>1300 || y<0 || y>748)
+        if (x<0 || x>1300 || y<0 || y>748) // collision
         {
             System.exit(0);
         }
