@@ -26,24 +26,24 @@ public class Snake extends JFrame implements Runnable, KeyListener
         try{
             while(true)
             {
-                t.sleep(60);
+                t.sleep(60); // time between frames
                 snake.get(0).move(); 
                 snake.get(0).offscreen();
-                if(fruit.getRect().intersects(snake.get(0).getRect()))
+                if(fruit.getRect().intersects(snake.get(0).getRect())) // eat fruit
                 {
                     snake.add(new Segment());
                     snake.get(snake.size()-1).setX(snake.get(snake.size()-2).getrX());
                     snake.get(snake.size()-1).setY(snake.get(snake.size()-2).getrY());
                     fruit.spawn();
                 }
-                for (int a = 1; a < snake.size(); a++)
+                for (int a = 1; a < snake.size(); a++) // collision
                 {
                     if (snake.get(0).getRect().intersects(snake.get(a).getRect()))
                     {
                         System.exit(0);
                     }
                 }
-                if (snake.size()>1)
+                if (snake.size()>1) //move
                 {
                     for (int a = 1; a < snake.size(); a++)
                     {
@@ -78,7 +78,7 @@ public class Snake extends JFrame implements Runnable, KeyListener
     public static void main(String[] args)
     {
         Snake frame = new Snake();
-        frame.setSize(1320, 768);//determines size of screen
+        frame.setSize(1320, 768); // determines size of screen
         frame.setVisible(true);
     }
 
@@ -87,7 +87,7 @@ public class Snake extends JFrame implements Runnable, KeyListener
         paint(g);
     }
 
-    public void keyReleased(KeyEvent k)
+    public void keyReleased(KeyEvent k) // use arrow keys to move
     {
         if(k.getKeyCode() == 37)
         {
